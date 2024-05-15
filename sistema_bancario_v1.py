@@ -22,6 +22,7 @@ while True:
             print("Tente novamente!!!")
             continue
         saldo += deposito
+        extrato += f"Deposito - R$ {deposito:.2F}\n"
         
     if opcao == 2:
         if qtde_saque == 0:
@@ -39,7 +40,11 @@ while True:
                 saldo -= saque
                 qtde_saque -=1
                 valor_saque += saque
+                extrato += f"Saque - R$ {saque:.2f}\n"
                 
+    if opcao == 3:
+        print(extrato)
+
     if opcao == 0 :
         print("saindo do sistema!!!")
         break
